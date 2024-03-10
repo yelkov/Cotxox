@@ -1,5 +1,7 @@
 package edu.badpals.cotxox;
 
+import edu.badpals.cotxox.carrera.Carrera;
+
 public class Cotxox {
 
     public static void main(String[] args) {
@@ -27,3 +29,5 @@ public class Cotxox {
         System.out.println("From: " + carrera.getOrigen());
         System.out.println("To: " + carrera.getDestino());
         System.out.println("Distance: " + carrera.getDistancia());
+    }
+}
