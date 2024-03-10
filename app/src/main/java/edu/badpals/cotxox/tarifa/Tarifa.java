@@ -10,13 +10,14 @@ public class Tarifa {
 
     public Tarifa(){};
 
-    public double getCosteDistancia(double distancia){
-        return this.COSTE_MILLA * distancia;
+    public static double getCosteDistancia(double distancia){
+        return COSTE_MILLA * distancia;
     }
-    public int getCosteTiempo(double tiempo){
-        return (int)(this.COSTE_MINUTO * tiempo);
+    public static int getCosteTiempo(double tiempo){
+        return (int)(COSTE_MINUTO * tiempo);
     }
-    public double getCosteTotalEsperado(Carrera carrera){
-        return 0.0;
+    public static double getCosteTotalEsperado(Carrera carrera){
+        double costeTotal = getCosteDistancia(carrera.getDistancia()) + getCosteTiempo(carrera.getTiempoEsperado());
+        return costeTotal>COSTE_MINIMO? costeTotal : COSTE_MINIMO;
     }
 }

@@ -1,5 +1,7 @@
 package edu.badpals.cotxox.carrera;
 
+import edu.badpals.cotxox.tarifa.Tarifa;
+
 public class Carrera {
     private String tarjetaCredito = "";
     private String origen = "";
@@ -71,5 +73,8 @@ public class Carrera {
 
     public void setPropina(int propina) {
         this.propina = propina;
+    }
+    public double getCosteEsperado(){
+        return Tarifa.getCosteTotalEsperado(this);
     }
 }
