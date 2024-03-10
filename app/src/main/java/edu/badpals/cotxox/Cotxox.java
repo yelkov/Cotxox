@@ -1,6 +1,10 @@
 package edu.badpals.cotxox;
 
 import edu.badpals.cotxox.carrera.Carrera;
+import edu.badpals.cotxox.conductores.Conductor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cotxox {
 
@@ -37,35 +41,36 @@ public class Cotxox {
         System.out.println("To: " + carrera.getDestino());
         System.out.println("Distance: " + carrera.getDistancia());
         System.out.println("Total: " + carrera.getCosteEsperado() + "€");
+
+        /**
+         * Necesitamos crear la flota de conductores de donde seleccionar uno
+         * para ofrecer el servicio.
+         * La flota es un objeto de tipo PoolConductores.
+         */
+
+        List<Conductor> poolConductores = new ArrayList<Conductor>();
+        Conductor conductor = null;
+
+        // creamos objetos conductor y los metemos en el array
+
+        String[] nombres = { "Samantha", "Fox", "Mola" };
+        for (String nombre : nombres) {
+            conductor = new Conductor(nombre);
+            poolConductores.add(conductor);
+        }
+
+        String[] matricula = { "4ABC123", "5DHJ444", "7JKK555" };
+        String[] modelos = { "Chevy Malibu", "Toyota Prius", "Mercedes A" };
+
+        int index = 0;
+        for (Conductor conductora : poolConductores) {
+            conductora.setMatricula(matricula[index]);
+            conductora.setModelo(modelos[index]);
+            // suponemos que las conductoras tienen una valoracion inicial de 4 stars
+            conductora.setValoracion((byte) 4);
+            index++;
+        }
     }
-    /**
-     * Necesitamos crear la flota de conductores de donde seleccionar uno
-     * para ofrecer el servicio.
-     * La flota es un objeto de tipo PoolConductores.
-     */
-/*
-    List<Conductor> poolConductores = new ArrayList<Conductor>();
-    Conductor conductor = null;
 
-    // creamos objetos conductor y los metemos en el array
 
-    String[] nombres = { "Samantha", "Fox", "Mola" };
-		for (String nombre : nombres) {
-        conductor = new Conductor(nombre);
-        poolConductores.add(conductor);
-    }
-
-    String[] matricula = { "4ABC123", "5DHJ444", "7JKK555" };
-    String[] modelos = { "Chevy Malibu", "Toyota Prius", "Mercedes A" };
-
-    int index = 0;
-		for (Conductor conductora : poolConductores) {
-        conductora.setMatricula(matricula[index]);
-        conductora.setModelo(modelos[index]);
-        // suponemos que las conductoras tienen una valoracion inicial de 4 stars
-        conductora.setValoracion((byte) 4);
-        index++;
-    }
-
- */
 }
