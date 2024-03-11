@@ -93,4 +93,16 @@ public class Carrera {
     public void asignarConductor(PoolConductores pool){
         setConductor(pool.asignarConductor());
     }
+
+    public void realizarPago(double costeEsperado) {
+        this.costeTotal= costeEsperado;
+    }
+
+    public void recibirPropina(int propina) {
+        this.propina = propina;
+    }
+
+    public void liberarConductor() {
+        getConductor().setOcupado(false);
+    }
 }
