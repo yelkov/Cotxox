@@ -1,7 +1,10 @@
 package edu.badpals.cotxox.carrera;
 
 import edu.badpals.cotxox.conductores.Conductor;
+import edu.badpals.cotxox.conductores.PoolConductores;
 import edu.badpals.cotxox.tarifa.Tarifa;
+
+import java.util.List;
 
 public class Carrera {
     private String tarjetaCredito = "";
@@ -86,5 +89,8 @@ public class Carrera {
 
     public void setConductor(Conductor conductor) {
         this.conductor = conductor;
+    }
+    public void asignarConductor(PoolConductores pool){
+        setConductor(pool.asignarConductor());
     }
 }

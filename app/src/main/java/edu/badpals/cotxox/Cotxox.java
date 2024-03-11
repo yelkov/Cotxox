@@ -2,6 +2,7 @@ package edu.badpals.cotxox;
 
 import edu.badpals.cotxox.carrera.Carrera;
 import edu.badpals.cotxox.conductores.Conductor;
+import edu.badpals.cotxox.conductores.PoolConductores;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +42,8 @@ public class Cotxox {
         System.out.println("To: " + carrera.getDestino());
         System.out.println("Distance: " + carrera.getDistancia());
         System.out.println("Total: " + carrera.getCosteEsperado() + "€");
+
+        System.out.println("\n#####" + "\t Get a ride: Driver: \t" + "#####\n");
 
         /**
          * Necesitamos crear la flota de conductores de donde seleccionar uno
